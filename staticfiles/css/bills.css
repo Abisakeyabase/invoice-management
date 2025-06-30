@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home-sec{
+    background-color: rgba(4, 4, 4, 0.04); width: 100%;height: 100%;
+}
+.home-container {
+    background-color: #040837;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: white;
+}
+
+.home-row{
+    padding: 5px;
+}
+.home-col h1{
+    font-size: 20px; padding: 10px; font-weight: 700;
+}
+.home-col a {
+    background-color: #ff8016; color: white; font-size: 16px; font-weight: 600;
+
+}
+.home-col a i{
+    padding-left: 5px;
+}
+/* --------see all invoice---- */
+
+.invoice-table {
+    width: 100%;
+}
+.invoice-table-sec{
+    width: 98%; margin: auto;
+}
+.invoice-table-div{
+    background-color: white; padding: 10px 20px 20px 10px; height: 55vh;
+}
+.invoice-table thead tr {
+    color: #ff8016;
+
+}
+
+.invoice-table-td {
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #040837;
+    color: white;
+    border-radius: 10px;
+    height: 45px;
+}
+
+.btn-view {
+    color: white;
+    border: 1px solid #ff8016;
+    outline: none;
+    padding: 3px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #ff8016;
+    margin-right: 3px;
+}
+
+.btn-delete {
+    background-color: #ff0000;
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
+.space-div {
+    margin-top: 20px;
+    height: 10px;
+}
+
+.btn-down {
+    color: white;
+    background-color: #ff8016;
+    border: 1px solid #ff8016;
+    outline: none;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#home-nav-btn:hover {
+    border: 1px solid #ff8016;
+}
+
+
+/* ----------------orange boxes------- */
+.tot-col {
+    background-color: #ff8016;
+    margin-right: 10px;
+    color: white;
+    border-radius: 6px;
+    position: relative;
+    text-decoration: none;
+}
+
+.tot-col h1 {
+    font-size: 32px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.tot-col p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+    padding-left: 5px;
+}
+
+.tot-col i {
+    position: absolute;
+    font-size: 80px;
+    top: 30%;
+    left: 64%;
+    padding: 3px;
+    color: rgba(0, 0, 0, 0.361);
+}
+
+.invtablehead {
+    color: rgba(4, 8, 55, 255);
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+/* ------------------------------media query----------------- */
+
+@media (max-width: 1440px) {
+
+    .tot-col {
+        background-color: #ff8016;
+        margin-right: 10px;
+        color: white;
+        border-radius: 6px;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .tot-col h1 {
+        font-size: 32px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .tot-col p {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 20px;
+        padding-left: 5px;
+    }
+
+    .tot-col i {
+        position: absolute;
+        font-size: 80px;
+        top: 30%;
+        left: 60%;
+        padding: 3px;
+        color: rgba(0, 0, 0, 0.361);
+    }
+
+    .invtablehead {
+        color: rgba(4, 8, 55, 255);
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .tot-col {
+        background-color: #ff8016;
+        margin-right: 10px;
+        color: white;
+        border-radius: 6px;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .tot-col h1 {
+        font-size: 28px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .tot-col p {
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 20px;
+        padding-left: 5px;
+    }
+
+    .tot-col i {
+        position: absolute;
+        font-size: 55px;
+        top: 30%;
+        left: 58%;
+        padding: 3px;
+        color: rgba(0, 0, 0, 0.361);
+        margin-top: 14px;
+    }
+
+    .btn-view {
+        color: white;
+        border: 1px solid #ff8016;
+        outline: none;
+        padding: 3px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #ff8016;
+        margin-right: 3px;
+        width: 60px;
+        font-size: 10px;
+    }
+
+    .btn-delete {
+        background-color: #ff0000;
+        text-decoration: none;
+        color: white;
+        border: none;
+        width: 60px;
+        font-size: 10px;
+        margin-top: 3px;
+    }
+
+    .invoice-table thead tr {
+        color: #ff8016;
+        font-size: 14px;
+
+    }
+
+    .invoice-table-td {
+        padding: 10px;
+        margin-top: 5px;
+        background-color: #040837;
+        color: white;
+        border-radius: 10px;
+        height: 45px;
+        font-size: 12px;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    .tot-col {
+        background-color: #ff8016;
+        margin-right: 10px;
+        color: white;
+        border-radius: 6px;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .tot-col h1 {
+        font-size: 16px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .tot-col p {
+        font-size: 9px;
+        font-weight: 600;
+        margin-top: 20px;
+        padding-left: 5px;
+    }
+
+    .tot-col i {
+        position: absolute;
+        font-size: 35px;
+        top: 30%;
+        left: 58%;
+        padding: 3px;
+        color: rgba(0, 0, 0, 0.361);
+        margin-top: 14px;
+    }
+
+    .btn-view {
+        color: white;
+        border: 1px solid #ff8016;
+        outline: none;
+        padding: 3px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #ff8016;
+        margin-right: 3px;
+        width: 60px;
+        font-size: 10px;
+    }
+
+    .btn-delete {
+        background-color: #ff0000;
+        text-decoration: none;
+        color: white;
+        border: none;
+        width: 60px;
+        font-size: 10px;
+        margin-top: 3px;
+    }
+
+    .invoice-table thead tr th {
+        color: #ff8016;
+        font-size: 10px;
+        padding: 3px;
+
+    }
+
+    .invoice-table-td {
+        padding: 10px;
+        margin-top: 5px;
+        background-color: #040837;
+        color: white;
+        border-radius: 10px;
+        height: 45px;
+        font-size: 10px;
+    }
+    .invoice-table-td td{
+        /* border: 1px solid yellow; */
+        font-size: 10px;
+        padding: 3px;
+        
+    }
+
+    .invtablehead {
+        color: rgba(4, 8, 55, 255);
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+    
+    .home-col{
+        /* border: 1px solid yellow; */
+        width: 150px;
+    }
+    .home-col a {
+        width: 120px;
+        color: white;
+        margin-left: 8px;
+        /* border: 1px solid yellow; */
+        font-size: 12px;
+        padding: 10px;
+        
+    
+    }
+    .home-col h1{
+        font-size: 16px; padding: 3px; font-weight: 700;
+    }
+    .invoice-table-div{
+        background-color: white; padding: 10px 20px 20px 10px; height: 55vh;
+    }
+    .invoice-table-sec{
+        width: 100%;
+    }
+    
+}
+
+
+@media (max-width: 426px) {
+    
+    .tot-col {
+        background-color: #ff8016;
+        margin-right: 3px;
+        color: white;
+        border-radius: 6px;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .tot-col h1 {
+        font-size: 10px;
+        padding: 3px;
+        margin-top: 10px;
+    }
+
+    .tot-col p {
+        font-size: 6px;
+        font-weight: 600;
+        margin-top: 20px;
+        padding-left: 5px;
+    }
+
+    .tot-col i {
+        position: absolute;
+        font-size: 25px;
+        top: 30%;
+        left: 58%;
+        padding: 3px;
+        color: rgba(0, 0, 0, 0.361);
+        margin-top: 14px;
+    }
+
+    .btn-view {
+        color: white;
+        border: 1px solid #ff8016;
+        outline: none;
+        padding: 3px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #ff8016;
+        margin-right: 3px;
+        width: 60px;
+        font-size: 10px;
+    }
+
+    .btn-delete {
+        background-color: #ff0000;
+        text-decoration: none;
+        color: white;
+        border: none;
+        width: 60px;
+        font-size: 10px;
+        margin-top: 3px;
+    }
+    .invoice-table-div{
+        padding: 10px 20px 20px 10px; height: 55vh;
+   }
+   .invoice-table-sec{
+       width: 100%;
+   }
+    .invoice-table thead tr th {
+        color: #ff8016;
+        font-size: 8px;
+        padding: 2px;
+
+    }
+    
+    .invoice-table-td {
+        /* padding: 10px;
+        margin-top: 5px; */
+        background-color: #040837;
+        color: white;
+        /* border-radius: 10px; */
+        height: 45px;
+        font-size: 8px;
+        overflow: scroll;
+    }
+    .invoice-table-td td{
+        
+        font-size: 8px;
+        padding: 3px;
+        
+    }
+
+    .invtablehead {
+        color: rgba(4, 8, 55, 255);
+        font-size: 12px;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+    .home-sec{
+        background-color: rgba(4, 4, 4, 0.04); width: 100%;height: 100%;
+    }
+    .home-col{
+        /* border: 1px solid yellow; */
+        width: 100px;
+        display: flex;
+    }
+    .home-container{
+        margin-top: 75px;
+        /* border: 1px solid yellow; */
+    }
+    /* .home-row{
+        border: 1px solid yellow;
+    }  */
+    .home-col a {
+        /* width: 120px; */
+        color: white;
+        margin-left: 8px;
+        
+        font-size: 12px;
+        padding: 1px;
+        
+    }
+    .home-col:nth-child(1){
+        width: 120px;
+    }
+    .home-col a i{
+        font-size: 12px;
+    }
+    .home-col h1{
+        font-size: 12px; padding: 5px; font-weight: 700;
+        width: 100px;
+    }
+  
+   
+}
+

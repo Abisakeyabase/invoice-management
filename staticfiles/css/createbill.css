@@ -1,0 +1,724 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sec3-container {
+    margin-top: 10px;
+}
+
+.sec3-container-head {
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ff8016;
+}
+
+.sec3-container-table {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.sec3-container-table-tr1 {
+    background-color: #040837;
+    color: white;
+    font-size: 22px;
+    padding: 5px;
+}
+
+.sec3-container-table-tr1 th {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sec3-container-table-tr2 {
+    border-bottom: 1px solid #040837;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr3 {
+    border-bottom: 1px solid #040837;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr4 {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    font-size: 18px;
+}
+
+
+.cinvoice-head {
+    margin-top: 10px;
+    font-size: 44px;
+    font-weight: 800;
+    color: #040837;
+}
+
+.cinvoice-row {
+    padding: 10px;
+}
+
+.cinvoice-col {
+    color: #040837;
+}
+
+.cinvoice-col h1 {
+    font-size: 34px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.cinvoice-col h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.cinvoice-col h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+.cinvoice-col h5 {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 700;
+
+}
+
+.form-label {
+    color: rgba(255,128,22,255);
+    text-transform: capitalize;
+    padding: 3px;
+    font-size: 18px;
+    font-weight: 500;
+    width: 180px;
+}
+
+.form-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,128,22,255);
+    padding: 3px;
+    outline: none;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.form-input::placeholder {
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.sbt-btns button {
+    outline: none;
+    border: 1px solid rgba(255,128,22,255);
+    background-color: rgba(255,128,22,255);
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+
+}
+
+.cinvoice-gtotal {
+    margin-top: 10px;
+}
+
+.cinvoice-gtotal label {
+    color: #040837;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.cinvoice-gtotal h1 {
+    color: #040837;
+    display: none;
+}
+
+.cinvoice-gtotal h1 span {
+    color: #040837;
+    display: none;
+
+}
+
+
+.sec3-container {
+    margin-top: 10px;
+}
+
+.sec3-container-head {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff8016;
+}
+
+.sec3-container-table {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.sec3-container-table-tr1 {
+    background-color: #ff8016;
+    color: white;
+    font-size: 22px;
+    padding: 5px;
+}
+
+.sec3-container-table-tr1 th {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sec3-container-table-tr2 {
+    border-bottom: 1px solid #ff8016;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr3 {
+    border-bottom: 1px solid #ff8016;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr4 {
+    border-bottom: 1px solid #ff8016;
+    padding: 5px;
+    font-size: 18px;
+}
+.color{
+    background-color: yellow;
+}
+
+.cbill-row{
+    display: flex;
+}
+
+.find-div-1{
+    display: block; padding: 10px; width: 40%;
+}
+.find-div-1 input{
+    padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+}
+.find-div-1 label{
+    color: rgb(198, 13, 13); font-size: 18px; font-weight: 700;
+}
+.find-div-2{
+    display: block; padding: 10px; width: 40%;
+}
+.find-div-2 input{
+    padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+}
+.find-div-2 label{
+    color:rgb(198, 13, 13);font-size: 18px; font-weight: 700;
+}
+.find-div-3{
+    padding: 10px; display: flex; justify-content: center; align-items: center;
+                text-align: center;
+}
+.find-div-3 input{
+    width: 100px; border: 1px solid rgb(198, 13, 13); background-color:rgb(198, 13, 13);color: white;
+                   outline: none; border-radius: 8px; padding: 6px; margin-top: 20px; margin-left: 30px;
+}
+.find-div-msg{
+    font-size: 14px; color: rgb(198, 13, 13); font-weight: 600; padding: 10px; text-transform: capitalize;
+}
+.find-div{
+    display: flex; width: 70%;
+}
+@media (max-width: 1440px) {
+    
+}
+@media (max-width: 1024px) {
+    .find-div-1{
+        display: block; padding: 10px; width: 50%;
+    }
+    .find-div-1 input{
+        padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+    }
+    .find-div-1 label{
+        color: rgb(198, 13, 13); font-size: 16px; font-weight: 700;
+    }
+    .find-div-2{
+        display: block; padding: 10px; width: 50%;
+    }
+    .find-div-2 input{
+        padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+    }
+    .find-div-2 label{
+        color:rgb(198, 13, 13);font-size: 16px; font-weight: 700;
+    }
+    .find-div-msg{
+        font-size: 12px; color: rgb(198, 13, 13); font-weight: 600; padding: 10px; text-transform: capitalize;
+    }
+    .date label{
+        /* background-color: red; */
+        width: 100px;
+
+    }
+    .stdname-divbill{
+        /* background-color: red; */
+        display: flex;
+        width: 100%;
+    }
+    .stdname-divbill label{
+        width: 150px;
+        /* background-color: gray; */
+    }
+ 
+}
+
+@media (max-width: 768px) {
+    .find-div{
+        display: flex; width: 90%;
+    }
+    .find-div-1{
+        display: block; padding: 10px; width: 60%;
+    }
+    .find-div-1 input{
+        padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+    }
+    .find-div-1 label{
+        color: rgb(198, 13, 13); font-size: 16px; font-weight: 700;
+    }
+    .find-div-2{
+        display: block; padding: 10px; width: 70%;
+    }
+    .find-div-2 input{
+        padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+    }
+    .find-div-2 label{
+        color:rgb(198, 13, 13);font-size: 16px; font-weight: 700;
+    }
+    .find-div-msg{
+        font-size: 12px; color: rgb(198, 13, 13); font-weight: 600; padding: 10px; text-transform: capitalize;
+    }
+
+
+    .cinvoice-head {
+        margin-top: 10px;
+        font-size: 44px;
+        font-weight: 800;
+        color: #040837;
+    }
+    
+    .cinvoice-row {
+        padding: 10px;
+    }
+    
+    .cinvoice-col {
+        color: #040837;
+    }
+    
+    .cinvoice-col h1 {
+        font-size: 28px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    
+    .cinvoice-col h3 {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        font-weight: 700;
+    }
+    
+    .cinvoice-col h4 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+    
+    }
+    
+    .cinvoice-col h5 {
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: 700;
+    
+    }
+
+
+
+
+
+    .date label{
+        /* background-color: red; */
+        width: 100px;
+
+    }
+    .cbill-row{
+        display: block;
+    }
+    .stdname-divbill{
+        /* background-color: red; */
+        display: flex;
+        width: 100%;
+    }
+    .stdname-divbill label{
+        width: 150px;
+        /* background-color: gray; */
+    }
+ .cbill-row div{
+    /* border: 1px solid yellow; */
+    display: flex;
+ }
+ .cbillinv-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ /* .cbillinv-div label{
+    background-color: red;
+ } */
+ .cbilldate-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbilldate-div label{
+    /* background-color: red; */
+    width: 180px;
+ }
+
+ .cbillamw-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillamw-div label{
+    /* background-color: red; */
+    width: 180px;
+
+ }
+ .cbillname-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillname-div label{
+    /* background-color: red; */
+    width: 180px;
+
+ }
+ .cbillamt-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillamt-div label{
+    /* background-color: red; */
+    width: 180px;
+
+ }
+ .cbillcourse-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillcourse-div label{
+    /* background-color: red; */
+    width: 180px;
+
+ }
+
+
+
+ 
+.sec3-container {
+    margin-top: 10px;
+}
+
+.sec3-container-head {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff8016;
+}
+
+.sec3-container-table {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.sec3-container-table-tr1 {
+    background-color: #ff8016;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.sec3-container-table-tr1 th {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sec3-container-table-tr2 {
+    border-bottom: 1px solid #ff8016;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr3 {
+    border-bottom: 1px solid #ff8016;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr4 {
+    border-bottom: 1px solid #ff8016;
+    padding: 5px;
+    font-size: 18px;
+}
+
+
+
+}
+
+
+/* -------------mobile view ---------/ */
+
+@media (max-width: 426px) {
+    .find-div{
+        display: block; width: 100%;
+    }
+    .find-div-1{
+        display: flex; padding: 10px; width: 90%;justify-content: center;align-items: center;text-align: center;
+    }
+    .find-div-1 input{
+        padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+    }
+    .find-div-1 label{
+        color: rgb(198, 13, 13); font-size: 14px; font-weight: 700;width: 360px;
+    }
+    .find-div-2{
+        display: flex; padding: 10px; width: 90%;justify-content: center;align-items: center;text-align: center;
+    }
+    .find-div-2 input{
+        padding: 5px; border: 1px solid rgb(198, 13, 13);border-radius: 10px;margin-top: 10px;width: 100%;
+    }
+    .find-div-2 label{
+        color:rgb(198, 13, 13);font-size: 14px; font-weight: 700;width: 360px;
+    }
+    .find-div-msg{
+        font-size: 12px; color: rgb(198, 13, 13); font-weight: 600; padding: 10px; text-transform: capitalize;
+    }
+    .find-div-3{
+        margin-top: -20px;
+    }
+    .find-div-msg{
+        font-size: 10px;
+    }
+
+
+    .cinvoice-head {
+        margin-top: 30px;
+        font-size: 38px;
+        font-weight: 800;
+        color: #040837;
+    }
+    
+    .cinvoice-row {
+        padding: 10px;
+    }
+    
+    .cinvoice-col {
+        color: #040837;
+    }
+    
+    .cinvoice-col h1 {
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    
+    .cinvoice-col h3 {
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        font-weight: 700;
+    }
+    
+    .cinvoice-col h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+    
+    }
+    
+    .cinvoice-col h5 {
+        font-size: 12px;
+        text-transform: capitalize;
+        font-weight: 700;
+    
+    }
+
+
+
+
+
+    .date label{
+        /* background-color: red; */
+        width: 100px;
+
+    }
+    .cbill-row{
+        display: block;
+    }
+    .stdname-divbill{
+        /* background-color: red; */
+        display: flex;
+        width: 100%;
+    }
+    .stdname-divbill label{
+        width: 150px;
+        /* background-color: gray; */
+    }
+ .cbill-row div{
+    /* border: 1px solid yellow; */
+    display: flex;
+ }
+ .cbillinv-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillinv-div label{
+    /* background-color: red; */
+    font-size: 16px;
+ }
+ .cbillinv-div input{
+    width: 70%;
+ }
+ .cbilldate-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbilldate-div label{
+    /* background-color: red; */
+    width: 180px;
+    font-size: 16px;
+ }
+ .cbilldate-div input{
+    width: 70%;
+ }
+
+ .cbillamw-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillamw-div label{
+    /* background-color: red; */
+    width: 180px;
+
+ }
+ .cbillname-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillname-div label{
+    /* background-color: red; */
+    width: 180px;
+    font-size: 16px;
+
+ }
+ .cbillinv-div input{
+    width: 70%;
+ }
+ .cbillamt-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillamt-div label{
+    /* background-color: red; */
+    width: 180px;
+
+ }
+ .cbillcourse-div{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+ }
+ .cbillcourse-div label{
+    /* background-color: red; */
+    width: 180px;
+    font-size: 12px;
+
+ }
+ .cbillcourse-div input{
+    width: 70%;
+ }
+
+
+
+ 
+.sec3-container {
+    margin-top: 10px;
+}
+
+.sec3-container-head {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff8016;
+}
+
+.sec3-container-table {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.sec3-container-table-tr1 {
+    background-color: #ff8016;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.sec3-container-table-tr1 th {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sec3-container-table-tr2 {
+    border-bottom: 1px solid #ff8016;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr3 {
+    border-bottom: 1px solid #ff8016;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.sec3-container-table-tr4 {
+    border-bottom: 1px solid #ff8016;
+    padding: 5px;
+    font-size: 18px;
+}
+
+
+
+}
+
+
+
+

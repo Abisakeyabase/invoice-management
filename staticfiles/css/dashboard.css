@@ -1,0 +1,356 @@
+.dash-sec {
+    background-color: #040837;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 15%; */
+    
+}
+.togle-btn{
+    display: none;
+}
+.dash-row {
+    padding: 10px;
+    margin-top: 30px;
+}
+.dash-col-compname{
+     font-size: 22px; font-weight: 700; color: #a6c625;
+
+}
+.togle-btn-cancel{
+    display: none;
+}
+
+.dash-col {
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.dash-btn{
+    color:  #ff8016;
+    width: 100%;
+    display: flex;
+    background-color: #040837;
+    padding: 5px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border: 1px solid #040837;
+    outline: none;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.dash-btn i{
+    margin-right: 10px;
+    font-size: 30px;
+}
+a, .active{
+    background-color: #ff8016;
+    color: #040837;
+    outline: none;
+}
+.dash-col-logout{
+   width: 100%;
+   /* border: 1px solid yellow; */
+}
+.dash-col-logout a {
+    text-decoration: none;
+    border-radius: 8px;
+    color:  #040837;
+    width: 100%;
+    display: flex;
+    background-color: #ff8016;
+    padding: 5px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border: 1px solid #040837;
+    outline: none;
+    margin-top: 80%;
+}
+.dash-col-logout a i{
+    margin-right: 10px;
+    font-size: 34px;
+}
+.dash-col-logout a:hover{
+    background-color: #ff8016;
+    color: #040837;
+}
+.dash-btn:hover{
+    background-color: #ff8016;
+    color: #040837;
+}
+/* #mydiv{
+    height: 68vh;
+    border: 1px solid yellow;
+} */
+
+
+@media (max-width: 1440px) {
+    .dash-sec {
+        background-color: #040837;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* width: 20%; */
+        
+    }
+    .dash-col-logout a {
+        text-decoration: none;
+        border-radius: 8px;
+        color:  #040837;
+        width: 100%;
+        display: flex;
+        background-color: #ff8016;
+        padding: 5px;
+        font-size: 20px;
+        text-transform: capitalize;
+        border: 1px solid #040837;
+        outline: none;
+        margin-top: 190%;
+    }
+
+}
+@media (max-width: 1024px) {
+    .dash-sec {
+        background-color: #040837;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 21%;
+        
+    }
+
+    .dash-col-logout a {
+        text-decoration: none;
+        border-radius: 8px;
+        color:  #040837;
+        width: 100%;
+        display: flex;
+        background-color: #ff8016;
+        padding: 5px;
+        font-size: 20px;
+        text-transform: capitalize;
+        border: 1px solid #040837;
+        outline: none;
+        margin-top: 170%;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .dash-sec {
+        background-color: #040837;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 21%;
+        
+    }
+
+.dash-row {
+    padding: 5px;
+    margin-top: 30px;
+}
+.dash-col-compname{
+     font-size: 16px; font-weight: 700; color: #a6c625;
+
+}
+
+.dash-col {
+    margin-top: 10px;
+    padding: 3px;
+    width: 100%;
+}
+
+.dash-btn{
+    color:  #ff8016;
+    width: 100%;
+    display: flex;
+    background-color: #040837;
+    padding: 5px;
+    font-size: 18px;
+    text-transform: capitalize;
+    border: 1px solid #040837;
+    outline: none;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.dash-btn i{
+    margin-right: 5px;
+    font-size: 25px;
+}
+a, .active{
+    background-color: #ff8016;
+    color: #040837;
+    outline: none;
+}
+.dash-col-logout{
+   width: 100%;
+   /* border: 1px solid yellow; */
+}
+.dash-col-logout a {
+    text-decoration: none;
+    border-radius: 8px;
+    color:  #040837;
+    width: 100%;
+    display: flex;
+    background-color: #ff8016;
+    padding: 5px;
+    font-size: 18px;
+    text-transform: capitalize;
+    border: 1px solid #040837;
+    outline: none;
+    margin-top: 100%;
+}
+.dash-col-logout a i{
+    margin-right: 5px;
+    font-size: 25px;
+}
+.dash-col-logout a:hover{
+    background-color: #ff8016;
+    color: #040837;
+}
+.dash-btn:hover{
+    background-color: #ff8016;
+    color: #040837;
+}
+
+
+}
+
+
+@media (max-width: 426px) {
+    /* .dash-sec {
+        display: none;
+        z-index: 10;
+        width: 170%;
+        margin-left: -15px;
+        
+    } */
+    .dash-sec {
+        background-color: #040837;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 10;
+        width: 35%;
+        margin-left: -15px;
+        
+    }
+    .togle-btn-cancel{
+        display: block;
+        width: 100%;
+        /* border: 1px solid yellow; */
+    }
+    .togle-btn-cancel button{
+        outline: none;
+        padding: 5px;
+        border: 1px solid #ff8016;
+        background-color: #ff8016;
+        color: #040837;
+        margin-left: 79%;
+        border-radius: 6px;
+    }
+    .togle-btn{
+        display: block;
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        z-index: -1;
+        background-color:  rgba(4, 4, 4, 0.04);
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.305); */
+        width: 435px;
+    
+    }
+    .togle-btn button{
+        /* padding-top: 40%; */
+        background-color: #040837;
+        color: #ff8016;
+        border: 1px solid #040837;
+        outline: none;
+        padding: 5px;
+        border: 1px solid white;border-radius: 6px;
+    }
+    
+.dash-row {
+    padding: 5px;
+    margin-top: 30px;
+}
+.dash-col-compname{
+     font-size: 12px; font-weight: 700; color: #a6c625;
+
+}
+
+.dash-col {
+    margin-top: 10px;
+    padding: 3px;
+    width: 100%;
+}
+
+.dash-btn{
+    color:  #ff8016;
+    width: 100%;
+    display: flex;
+    background-color: #040837;
+    padding: 5px;
+    font-size: 14px;
+    text-transform: capitalize;
+    border: 1px solid #040837;
+    outline: none;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.dash-btn i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+a, .active{
+    background-color: #ff8016;
+    color: #040837;
+    outline: none;
+}
+.dash-col-logout{
+   width: 100%;
+   margin-top: 20%;
+   padding-left: 25px;
+}
+.dash-col-logout a {
+    text-decoration: none;
+    border-radius: 8px;
+    color:  #040837;
+    width: 90%;
+    display: flex;
+    background-color: #ff8016;
+    padding: 3px;
+    font-size: 14px;
+    text-transform: capitalize;
+    border: 1px solid #040837;
+    outline: none;
+    margin-top: 150%;
+    margin-left: 10%;
+    font-weight: 500;
+}
+.dash-col-logout a i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+.dash-col-logout a:hover{
+    background-color: #ff8016;
+    color: #040837;
+}
+.dash-btn:hover{
+    background-color: #ff8016;
+    color: #040837;
+}
+
+#mydiv{
+    padding-left: 25px;
+}
+
+}
