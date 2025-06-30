@@ -1,0 +1,128 @@
+{% extends 'yabaseapp/layout/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    Home page | Invoice
+    {% endblock title %}
+    <!-- -e- -->
+    <!-- Add css -->
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/homecss.css' %}">
+    {% endblock extra_css%}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    {% block content %}
+    <!-- ------navoda content----- -->
+    <section class="home-sec">
+        <div class="container" style="margin-top: -38px;">
+            <nav class="home-container container-fluid">
+                <div class="home-row row d-flex">
+                    <div class="home-col col-4 d-flex align-items-center col-lg-4">
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div class="col-8 d-flex justify-content-end p-1">
+                        <div class="home-col col-3 d-flex justify-content-center col-lg-5">
+                            <a href="{% url 'createinvoice' %}" class="btn" id="home-nav-btn"><i
+                                    class='bx bx-file'></i>Create Invoice</a>
+                        </div>
+                        <div class="home-col col-3 d-flex justify-content-center">
+                            <a href="{% url 'createbill' %}" class="btn" id="home-nav-btn"><i
+                                    class='bx bx-file'></i>Create Bill</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- --------------total calculation sec----------- -->
+            <section class="container">
+                <div class="" style="margin-top: 30px; display: flex;">
+                    <div class="tot-col col">
+                        <h1 id="totalinvoices">₹ {{ total_sales }}
+                        </h1>
+                        <p>Total Sales</p>
+                        <i class='bx bx-rupee'></i>
+                    </div>
+                    <a href="{% url 'invoices' %}" class="col tot-col">
+                        <h1>{{ total_row_invoice }}</h1>
+                        <p>Total Invoices</p>
+                        <i class='bx bx-printer'></i>
+
+                    </a>
+
+                    <div class="col tot-col">
+                        <h1>{{ pendingbills }}</h1>
+                        <p>Pending Bills</p>
+                        <i class='bx bx-loader-circle'></i>
+                    </div>
+                    <div class="col tot-col">
+                        <h1>₹ {{ dueamount }}</h1>
+                        <p>Due Amount</p>
+                        <i class='bx bx-error'></i>
+                    </div>
+                    <a href="{% url 'bills' %}" class="col tot-col">
+                        <h1>{{ total_row_bill }}</h1>
+                        <p>Paid Bills</p>
+                        <i class='bx bx-notepad'></i>
+                    </a>
+                </div>
+            </section>
+            <!-- -----------invoice details----- -->
+            <h1 class="invtablehead">Recent Invoices</h1>
+
+            <section class="container invoice-table-sec">
+                <div class="invoice-table-div">
+                    <table style="width: 100%;" class="invoice-table">
+                        <thead>
+                            <tr class="">
+                                <th class="text-center"> Invoice No.</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center"> Student Name</th>
+                                <th class="text-center"> Course Name</th>
+                                <th class="text-center"> Amount</th>
+                                <th class="text-center"> Payment</th>
+                                <th class="text-center"> Action</th>
+                            </tr>
+                        </thead>
+                        <tr class="space-div-1"></tr>
+                        <tbody class="tbody">
+                            {% if invoicedetails %}
+                            {% for details in invoicedetails %}
+                            <tr class="space-div"></tr>
+                            <tr class="invoice-table-td">
+                                <td class="text-center" style="border-radius: 10px 0px 0px 10px;">{{ details.stdid }}</td>
+                                <td class="text-center">{{ details.indate }}</td>
+                                <td class="text-center">{{ details.sfname }}</td>
+                                <td class="text-center">{{ details.coname }}</td>
+                                <td class="text-center">₹{{ details.cototal }}</td>
+                                <td class="text-center">{{ details.payment }}</td>
+                                <td class="text-center" style="border-radius: 0px 10px 10px 0px;">
+                                    <a href="{% url 'printinvoice'  details.stdid details.sfname %}"
+                                        class="btn-view btn"><i class='bx bx-low-vision'
+                                            style="padding-right: 5px;"></i>View</a>
+                                    <a href="{% url 'deleteinvoice' details.stdid %}" class="btn-delete btn btn-sm"
+                                        onclick="return confirm('Delete this invoice?');">
+                                        <i class='bx bx-trash' style="padding-right: 2px;"></i>Delete</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center">No product details available</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </section>
+    {% endblock content %}
+</body>
+
+</html>

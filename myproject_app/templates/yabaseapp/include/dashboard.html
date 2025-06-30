@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="togle-btn" id="togle-btn">
+    <button>=</button>
+</div>
+<section class="dash-sec" style="height: 100vh;" id="dash-sec">
+    <div class="togle-btn-cancel" id="togle-btn-cancel">
+        <button><i class='bx bx-x'></i></button>
+    </div>
+    <div class="dash-row row d-flex flex-column align-items-start" style="height: 100%;">
+        <div  style="width: 100%;padding: 10px;display: flex;justify-content: center;align-items: center;">
+            <h1 style="border-radius: 50%; color: white; border: 1px solid white;">Logo</h1>
+        </div>
+        <div class="dash-col">
+            <h1 class="dash-col-compname text-center">Company Name</h1>
+        </div>
+        <div id="mydiv">
+            <div class="dash-col">
+                <a class="dash-btn" href="{% url 'home' %}" style="font-weight: 700;"><i class='bx bxs-home'></i>Dashboard</a>
+            </div>
+            <div class="dash-col">
+                <a class="dash-btn" href="{% url 'invoices' %}" style="font-weight: 700;"><i class='bx bx-edit'></i>invoices</a>
+            </div>
+            <div class="dash-col">
+                <a class="dash-btn" href="{% url 'bills' %}" style="font-weight: 700;"><i class='bx bx-notepad'></i>bill</a>
+            </div>
+            <div class="dash-col">
+                <a class="dash-btn" href="http://127.0.0.1:8000/admin/" style="font-weight: 700;"><i class='bx bxs-user'></i>Profile</a>
+            </div>
+        </div>
+        <div class="dash-col-logout">
+            <a href="{% url 'logout' %}" class=""><i class='bx bx-log-out'></i>logout</a>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+

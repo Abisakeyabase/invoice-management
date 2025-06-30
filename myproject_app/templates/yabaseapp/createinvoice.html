@@ -1,0 +1,187 @@
+{% extends 'yabaseapp/layout/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    create invoice page | Invoice
+    {% endblock title %}
+    <!-- Add css -->
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/createinvoice.css' %}">
+    {% endblock extra_css%}
+
+</head>
+
+<body>
+    {% block content %}
+    <section class="cinvoice-sec">
+        <h1 class="cinvoice-head text-center">Invoice</h1>
+        <!-- ------head div--------- -->
+        <div class="cinvoice-container container-fluid">
+            <div class="cinvoice-row row d-flex" style="padding: 1px;">
+                <div class="cinvoice-col col-10">
+                    <h1>Company Name</h1>
+                    <h3>Address 1</h3>
+                    <h4>Address 2</h4>
+                    <h5>Address 3</h5>
+                </div>
+                <div class="cinvoice-col col-2" style="padding: 10px;">
+                <h1>Company logo</h1>    
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------form div---------- -->
+        <section>
+            <form action="{% url 'createinvoice' %}" method="POST" name="createinvoice" id="createinvoiceformid">
+            
+                {% csrf_token %}
+                <!-- -----form sec-1---- -->
+                <div class="row d-flex">
+                    <!-- <div class="col-5 d-flex">
+                        <label for="" class="form-label">invoice no:</label>
+                        <input class="form-input" type="text" placeholder="enter invoice number" name="invoicenumber">
+                    </div> -->
+                    <div class="col-5">
+                        <label for="invoicedate" class="form-label">invoice date:</label>
+                        <input class="form-input" type="date" placeholder="enter date" name="invoicedate" id="invoicedate">
+                    </div>
+                </div>
+                <!-- ----form sec2---- -->
+                <div class="container-fluid form-border">
+                    <h1 class="billedto">Billed To:</h1>
+                    <div class="row d-flex cinvoice-rowform">
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="stdfname" class="form-label">student first name:</label>
+                            <input class="form-input" type="text" placeholder="enter student first name" name="stdfname" id="stdfname" ><br>
+                            {% if errors.stdfname %}
+        <span class="error-message" style="color: red;">{{ errors.stdfname }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="parentname" class="form-label">parent name:</label>
+                            <input class="form-input" type="text" placeholder="enter parent name" name="parentname" id="parentname"><br>
+                            {% if errors.parentname %}
+        <span class="error-message" style="color: red;">{{ errors.parentname }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="stdlname" class="form-label">student last name:</label>
+                            <input class="form-input" type="text" placeholder="enter student last name" name="stdlname" id="stdlname"><br>
+                            {% if errors.stdlname %}
+        <span class="error-message" style="color: red;">{{ errors.stdlname }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="parnumber" class="form-label">contact number:</label>
+                            <input class="form-input" type="text" placeholder="enter parent contact number" name="parnumber" id="parnumber"><br>
+                            {% if errors.parnumber %}
+        <span class="error-message" style="color: red;">{{ errors.parnumber }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-11" style="margin-top: 10px;">
+                            <label for="stdaddress" class="form-label">student address:</label>
+                            <input class="form-input" type="text" placeholder="enter address" style="width: 70%;" name="stdaddress" id="stdaddress"><br>
+                            {% if errors.stdaddress %}
+        <span class="error-message" style="color: red;">{{ errors.stdaddress }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-11" style="margin-top: 10px;">
+                            <label for="email" class="form-label">Email address:</label>
+                            <input class="form-input" type="email" placeholder="enter email" style="width: 30%;" name="email" id="email" ><br>
+                            {% if errors.email %}
+        <span class="error-message" style="color: red;">{{ errors.email }}</span>
+    {% endif %}
+                        </div>
+                    </div>
+                    <h1 style="color: #040837; font-size: 22px; font-weight: 700;margin-top: 20px;">Course
+                        Details:</h1>
+                    <div class="cinvoice-rowform2">
+                        <div class="col-11" style="margin-top: 10px;">
+                            <label for="courses" class="form-label">course name:</label>
+                            <select class="form-input custom-select" name="courses" required id="courses">
+                                <option selected disabled>Select course</option>
+                                <option value="Python Full Stack">Python Full Stack</option>
+                                <option value="Java Full Stack">Java Full Stack</option>
+                                <option value="UI/UX Design">UI/UX Design</option>
+                                <option value="Data Analytics">Data Analytics</option>
+                              </select><br>
+                              {% if errors.courses %}
+        <span class="error-message" style="color: red;">{{ errors.courses }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-11" style="margin-top: 10px;">
+                            <label for="courseduration" class="form-label">course duration:</label>
+                            <input class="form-input" type="text" placeholder="enter duration" style="width: 30%;" name="coduration" required id="courseduration" readonly><br>
+                            {% if errors.courseduration %}
+        <span class="error-message" style="color: red;">{{ errors.courseduration }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-11" style="margin-top: 10px;">
+                            <label for="userinput" class="form-label">total:</label>
+                            <input id="userinput" class="form-input"  type="text" placeholder="enter amount" style="width: 30%;" name="totalamount" readonly>
+                            
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="installment1" class="form-label">installment 1:</label>
+                            <input class="form-input" type="text" placeholder="enter amount" name="installment1" id="installment1"><br>
+                            {% if errors.installments %}
+                            <span class="error-message" style="color: red;">{{ errors.installments }}</span>
+                        {% endif %}
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="installmentdate1" class="form-label">installment date:</label>
+                            <input class="form-input" type="date" placeholder="enter date" name="installmentdate1" id="installmentdate1" required readonly><br>
+                            {% if errors.installmentdate1 %}
+        <span class="error-message" style="color: red;">{{ errors.installmentdate1 }}</span>
+    {% endif %}
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="installment2" class="form-label">installment 2:</label>
+                            <input class="form-input" type="text" placeholder="enter amount" name="installment2" id="installment2" readonly>
+                        
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="installmentdate2" class="form-label">installment date:</label>
+                            <input class="form-input" type="date" placeholder="enter date" name="installmentdate2" id="installmentdate2" required readonly><br>
+                            {% if errors.installmentdate2 %}
+                            <span class="error-message" style="color: red;">{{ errors.installmentdate2 }}</span>
+                        {% endif %}
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="installment3" class="form-label">installment 3:</label>
+                            <input class="form-input" type="text" placeholder="enter amount" name="installment3" id="installment3" readonly>
+                            
+                        </div>
+                        <div class="col-5" style="margin-top: 10px;">
+                            <label for="installmentdate3" class="form-label">installment date:</label>
+                            <input class="form-input" type="date" placeholder="enter date" name="installmentdate3" id="installmentdate3" required readonly><br>
+                            {% if errors.installmentdate3 %}
+                            <span class="error-message" style="color: red;">{{ errors.installmentdate3 }}</span>
+                        {% endif %}
+                        </div>
+
+                        <h1 class="line"></h1>
+
+                        <div class="cinvoice-gtotal col-12 d-flex ">
+                            <label for="" class="col-4 d-flex text-center">Grand total: <span id="output" style="margin-left: 20px;"></span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sbt-btns row d-flex justify-content-center" style="margin-top: 20px;">
+                    <button type="submit" class="col-1 mx-3"><i class="fa-solid fa-floppy-disk" style="padding-right: 5px;"></i>Save</button>
+                    <button type="submit" class="col-1 mx-3" onclick="window.location.href='{% url 'home' %}'"><i class="fa-solid fa-xmark" style="padding-right: 5px;"></i>cancel</button>
+                </div><br><br>
+            </form>
+        </section>
+    </section>
+    <script src="{% static 'js/index.js' %}"></script>
+    {% endblock content %}
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+{% extends 'yabaseapp/layout/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    Invoices page | Invoice
+    {% endblock title %}
+    <!-- Add css -->
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/invoice.css' %}">
+    {% endblock extra_css%}
+</head>
+
+<body>
+    {% block content %}
+     <!-- ------navoda content----- -->
+<div class="container" style="margin-top: -36px;">
+     <nav class="home-container container-fluid">
+        <div class="home-row row d-flex">
+            <div class="home-col col-4 d-flex align-items-center col-lg-4" >
+                <h1>All Invoices</h1>
+            </div>
+            <div class="col-8 d-flex justify-content-end p-2">
+                <div class="home-col col-3 d-flex justify-content-center col-lg-5">
+                    <a href="{% url 'createinvoice' %}" class="btn" id="home-nav-btn"><i class='bx bx-file'></i>Create Invoice</a>
+                </div>
+                <div class="home-col col-3 d-flex justify-content-center">
+                    <a href="{% url 'createbill' %}" class="btn" id="home-nav-btn"><i class='bx bx-file'></i>Create Bill</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<section class="container invoice-table-sec">
+    <div class="invoice-table-div">
+    <table style="width: 100%;" class="invoice-table">
+        <thead>
+            <tr class="" >
+                <th class="text-center"> Invoice No.</th>
+                <th class="text-center">Date</th>
+                <th class="text-center"> Student Name</th>
+                <th class="text-center"> Course Name</th>
+                <th class="text-center"> Amount</th>
+                <th class="text-center"> Payment</th>
+                <th class="text-center"> Action</th>
+            </tr>
+        </thead>
+        <tr class="space-div-1"></tr>
+        <tbody>
+            {% if invoicedetails %}
+            {% for details in invoicedetails %}
+            <tr class="space-div"></tr>
+            <tr class="invoice-table-td">
+                <td class="text-center" style="border-radius: 10px 0px 0px 10px;">{{ details.stdid }}</td>
+                <td class="text-center">{{ details.indate }}</td>
+                <td class="text-center">{{ details.sfname }}</td>
+                <td class="text-center">{{ details.coname }}</td>
+                <td class="text-center">₹{{ details.cototal }}</td>
+                <td class="text-center">{{ details.payment }}</td>
+                <td class="text-center" style="border-radius: 0px 10px 10px 0px;">
+                    <a href="{% url 'printinvoice'  details.stdid details.sfname %}"
+                        class="btn-view btn btn-sm"><i class='bx bx-low-vision'
+                            style="padding-right: 5px;"></i>View</a>
+                    <a href="{% url 'deleteinvoice' details.stdid %}" class="btn-delete btn btn-sm"
+                        onclick="return confirm('Delete this invoice?');">
+                        <i class='bx bx-trash' style="padding-right: 2px;"></i>Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="7" class="text-center">No product details available</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+</div>
+</section>
+    {% endblock content %}
+
+</body>
+
+</html>

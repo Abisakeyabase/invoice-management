@@ -1,0 +1,268 @@
+{% extends 'yabaseapp/layout/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    create bill page | Invoice
+    {% endblock title %}
+    <!-- Add css -->
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/createbill.css' %}">
+    {% endblock extra_css%}
+
+</head>
+
+<body>
+    {% block content %}
+    <section class="container">
+        <h1 class="cinvoice-head text-center">Pay Bill</h1>
+        <!-- ------head div--------- -->
+        <div class="cinvoice-container container-fluid">
+            <div class="cinvoice-row row d-flex" style="padding: 10px;">
+                <div class="cinvoice-col col-10">
+                    <h1>Company Name</h1>
+                    <h3>Address 1</h3>
+                    <h4>Address 2</h4>
+                    <h5>Address 3</h5>
+                </div>
+                <div class="cinvoice-col col-2" style="padding: 10px;">
+<h1>Company Logo</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------form div---------- -->
+        <section style="padding-left: 30px; margin-bottom: 40px;">
+            <!-- <form action="" method="GET" name="">
+        {% csrf_token %}
+     
+         </form> -->
+            <form action="" method="GET" name="" id="form1">
+                {% csrf_token %}
+                <div class="find-div">
+                    <div class="find-div-1">
+                        <label for="name">Enter Name</label><br>
+                        <input class="" type="text" name="name" placeholder="Invoice Name" id="name" required>
+                    </div>
+                    <div class="find-div-2">
+                        <label for="mobile_number">Enter MobileNumber</label><br>
+                        <input type="text" name="mobile_number" placeholder="Invoice Mobile Number" id="mobile_number" required>
+                    </div>
+                    <div class="find-div-3">
+                        <input type="submit" value="Find" onclick="fetchBillDetails(); return false;">
+                    </div>
+                </div>
+                <p class="find-div-msg">If you entered
+                    your invoice name and invoice mobile number it find same name id details and autofill bellow
+                    requirements </p>
+            </form>
+            <hr style="width: 80%;">
+
+            <form action="{% url 'createbill' %}" method="POST" name="createinvoice" id="form2">
+                {% csrf_token %}
+                <!-- -----form sec-1---- -->
+                <h1 class="text-center" style="text-transform: capitalize; color: red; font-size: 22px;font-weight: 600; display: none;" id="error-msg">This Student Pay All Bills</h1>
+
+                <div class="row cbill-row">
+                    <div class="col-5 d-flex col-lg-6 cbillinv-div" >
+                        <label for="" class="form-label">Invoice no:</label>
+                        <input class="form-input" type="text" placeholder="enter invoice number" name="billnumber"
+                            id="id_number" required readonly>
+                    </div>
+                    <div class="col-5 col-lg-6 date cbilldate-div cbillname" >
+                        <label for="" class="form-label ">Bill date:</label>
+                        <input class="form-input" type="date" placeholder="enter date" name="billdate" id="billdate" readonly>
+                    </div>
+                    <div class="col-5 stdname-divbill cbillname-div" style="margin-top: 10px;">
+                        <label for="" class="form-label">student name:</label>
+                        <input class="form-input" type="text" placeholder="enter student name" name="billstdname"
+                            id="stdname" readonly>
+                    </div>
+                    <div class="col-11 col-md-8 cbillcourse-div" style="margin-top: 10px;">
+                        <label for="" class="form-label">course name:</label>
+                        <select class="form-input custom-select" name="courses" required id="coname" style="pointer-events: none;">
+                            <option selected disabled>Select course</option>
+                            <option value="Python Full Stack">Python full stack</option>
+                            <option value="Java Full Stack">Java full stack</option>
+                            <option value="UI/UX Design">Ui/ux desugn</option>
+                            <option value="Data Analytics">Data analytics</option>
+                        </select>
+                    </div>
+                    <div class="sec3-container" id="tablesection" style="display: none;">
+                        <h1 class="sec3-container-head text-center">Installment details</h1>
+                        <div style="display: block;">
+                            <table class="sec3-container-table" style="width: 75%; margin-left: 7%;">
+                                <tr class="sec3-container-table-tr1">
+                                    <th class="text-center">S.NO</th>
+                                    <th class="text-center">INSTALLMENT DATE</th>
+                                    <th class="text-center">AMOUNT</th>
+                                    <th class="text-center">STATUS</th>
+
+                                </tr>
+                                <tr class="sec3-container-table-tr2" id="row1">
+                                    <td class="text-center">1</td>
+                                    <td class="text-center" id="insdate1"></td>
+                                    <td class="text-center" id="insamount1"></td>
+                                    <td class="text-center" id="status1"></td>
+                                </tr>
+                                <tr class="sec3-container-table-tr3">
+                                    <td class="text-center">2</td>
+                                    <td class="text-center" id="insdate2"></td>
+                                    <td class="text-center" id="insamount2"></td>
+                                    <td class="text-center" id="status2"></td>
+
+                                </tr>
+                                <tr class="sec3-container-table-tr4">
+                                    <td class="text-center">3</td>
+                                    <td class="text-center" id="insdate3"></td>
+                                    <td class="text-center" id="insamount3"></td>
+                                    <td class="text-center" id="status3"></td>
+
+                                </tr>
+                            </table>
+                            <!-- ----------totoal and paid bills ------------ -->
+                            <div class="d-flex" style="margin-top: 25px; margin-left: 70px;">
+                                <div class="d-flex">
+                                   <span style="font-weight: 700; display: flex; color: green;">
+                                    <i class="fa-solid fa-file-invoice" style="padding-right: 10px;"></i>
+                                    <h1 style="font-size: 16px;font-weight: 700;">Total Paid Bills:</h1>
+                                    <h1 style="font-size: 18px; font-weight: 700; padding-left: 8px;" id="totoalpaidbills"></h1>
+                                </span>
+                                </div>
+                                <div class="d-flex" style="margin-left: 50px;">
+                                   <span style="font-weight: 700; display: flex; color: red;">
+                                    <i class="fa-solid fa-file-invoice" style="padding-right: 10px;"></i>
+                                    <h1 style="font-size: 16px;font-weight: 700;">Remaining Bills:</h1>
+                                    <h1 style="font-size: 18px; font-weight: 700; padding-left: 8px;" id="remainingbills"></h1>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-5 cbillamt-div" style="margin-top: 30px;">
+                        <label for="" class="form-label">amount:</label>
+                        <input class="form-input" type="text" placeholder="enter amount" name="billamountnumbers"
+                            id="amount" readonly>
+                    </div>
+
+                    <div class="col-5 cbillamw-div" style="margin-top: 30px;">
+                        <label for="" class="form-label">amount in words:</label>
+                        <input style="text-transform: capitalize;" class="form-input" type="text" placeholder="Enter amount in words"
+                            name="billamountwords" id="amountWords" readonly>
+                    </div>
+
+                    <div class="sbt-btns row d-flex justify-content-center" style="margin-top: 30px;">
+                        <button type="submit" class="col-1 mx-3" style="font-size: 18px; font-weight: 600;width: 120px;" id="save-btn"><i
+                                class="fa-solid fa-floppy-disk"
+                                style="padding-right: 10px; font-size: 18px;"></i>Save</button>
+
+                        <button type="button" class="col-1 mx-3" style="font-size: 18px; font-weight: 600;width: 120px;"
+                            onclick="window.location.href='{% url 'home' %}'"><i class="fa-solid fa-xmark"
+                                style="padding-right: 10px;font-size: 20px;"></i>Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let todaybill = new Date().toISOString().split('T')[0];
+            document.getElementById("billdate").value = todaybill;
+            console.log(todaybill, "autofill create bill date")
+        })
+
+
+        function fetchBillDetails() {
+            const name = document.getElementById("name").value;
+            const mobileNumber = document.getElementById("mobile_number").value;
+
+            if (name || mobileNumber) {
+                document.getElementById("tablesection").style.display = 'block'
+                fetch(`/get-bill-details/?name=${encodeURIComponent(name)}&mobile_number=${encodeURIComponent(mobileNumber)}`)
+                    .then(response => response.text())
+                    .then(text => {
+                        console.log(text);
+                        try {
+                            const data = JSON.parse(text);
+                            if (data.error) {
+                                alert(data.error);
+                            } 
+                            else
+                            {
+                                document.getElementById("id_number").value = data.billnumber;
+                                document.getElementById("stdname").value = data.billstdname;
+                                document.getElementById("coname").value = data.billconame;
+                                document.getElementById("insdate1").textContent = data.coinsdate1
+                                document.getElementById("insdate2").textContent = data.coinsdate2
+                                document.getElementById("insdate3").textContent = data.coinsdate3
+                                document.getElementById("insamount1").textContent = data.coins1
+                                document.getElementById("insamount2").textContent = data.coins2
+                                document.getElementById("insamount3").textContent = data.coins3
+
+                                const totalbill = data.totalbill
+                                document.getElementById("totoalpaidbills").textContent = totalbill
+                                document.getElementById("remainingbills").textContent = Math.abs(totalbill - 3)
+                                console.log("totalbill", totalbill)
+                                document.getElementById("status1").textContent = totalbill >= 1 ? "✅" : "❌";
+                                document.getElementById("status2").textContent = totalbill >= 2 ? "✅" : "❌";
+                                document.getElementById("status3").textContent = totalbill >= 3 ? "✅" : "❌";
+
+                                const amount1 = parseInt(data.coins1) || 0;
+                                const amount2 = parseInt(data.coins2) || 0;
+                                const amount3 = parseInt(data.coins3) || 0;
+                                console.log(amount1, amount2, amount3);
+                                let nextAmount = "You paid all bills";
+                                let amountInWords = "";
+
+                                if (totalbill === 0) {
+                                    nextAmount = amount1;
+                                    amountInWords = data.coins1_words;
+
+                                }
+                                else if (totalbill === 1) {
+                                    nextAmount = amount2;
+                                    amountInWords = data.coins2_words;
+
+                                }
+                                else if (totalbill === 2) {
+                                    nextAmount = amount3;
+                                    amountInWords = data.coins3_words;
+
+                                }
+                                else{
+                                    const errormsg=document.getElementById("error-msg")
+                                    alert("You Pay all bills in this student")
+                                    errormsg.style.display='block'
+                               document.getElementById("save-btn").style.display='none'
+
+                                }
+                                document.getElementById("amount").value = nextAmount;
+                                document.getElementById("amountWords").value = amountInWords;
+
+                            }
+                        } catch (e) {
+                            console.error("Error parsing JSON:", e);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching bill details:", error);
+                    });
+            }
+        }
+
+    </script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+    {% endblock content %}
+</body>
+
+</html>
